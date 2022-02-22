@@ -93,4 +93,4 @@ jobs:
           apiKey: ${{ secrets.FLEEK_API_KEY }}
           commitHash: ${{ github.sha }}
       - name: Get the output url
-        run: echo "Deploy url is ${{ steps.deploy.outputs }}"
+        run: echo "Deploy url is ${{ fromJson(steps.deploy.outputs) }}"
